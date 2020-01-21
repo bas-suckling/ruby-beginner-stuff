@@ -8,10 +8,9 @@ def auth_user (username, password, list_of_users)
     list_of_users.each do |user_record| 
         if user_record[:username] == username && user_record[:password] == password
             return user_record
-        else
-            return "credentials not correct"
         end
     end
+    return "credentials not correct"
 end
 
 
@@ -19,6 +18,7 @@ end
 puts "Welcome to the authenticator."
 25.times {print '-'}
 puts
+
 attempts = 1
 while attempts < 5
     print "Username: "
