@@ -10,7 +10,7 @@ def auth_user (username, password, list_of_users)
             return user_record
         end
     end
-    return "credentials not correct"
+    "credentials not correct"
 end
 
 
