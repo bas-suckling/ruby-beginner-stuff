@@ -18,12 +18,7 @@ end
  
 # Get area code based on given hash and key
 def get_area_code(somehash, key)
-  somehash.each do |cityname| 
-    if cityname.first == key
-      return cityname.last
-    end
-  end
-  puts "unknown error"
+  somehash[key]
 end
 
  
@@ -40,7 +35,7 @@ loop do
     puts "Enter your selection"
     city = gets.chomp.downcase
     if dial_book.include?(city)
-      puts get_area_code(dial_book, city)
+      puts "The area code for #{city} is #{get_area_code(dial_book, city)}"
     else
       puts "Invalid input"
     end
