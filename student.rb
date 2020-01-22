@@ -1,4 +1,7 @@
+require_relative 'crud'
+
 class Student
+    include Crud
     attr_accessor :first_name, :last_name, :email, :username ,:password
     #this replaces the need for individual getters and setters for each attribute
 
@@ -19,6 +22,6 @@ end
 bas = Student.new("Bas", "Suckling", "Bas123", "bas@email.com", "password1")
 john = Student.new("John", "Doe", "John123", "john@email.com", "password2")
 
-
+hashed_password = bas.create_hash_digest(bas.password)
+puts hashed_password
 puts bas
-puts john
